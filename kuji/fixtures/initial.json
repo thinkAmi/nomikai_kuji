@@ -1,0 +1,20 @@
+[
+  {
+    "model": "kuji.Member",
+    "pk": 1,
+    "fields": {
+      "no": "111111",
+      "is_attendance": true,
+      "seat": null
+    }
+  },
+  {
+  "model": "kuji.Member",
+  "pk": 2,
+  "fields": {
+    "no": "222222",
+    "is_attendance": true,
+    "seat": null
+    }
+  }
+]

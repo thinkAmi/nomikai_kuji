@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+<main class="container">
+    {% if messages %}
+        <h1 class="messages">座席位置
+            {% for message in messages %}
+                <h2{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
+            {% endfor %}
+        </h1>
+        <hr>
+    {% endif %}
+
+    <h1>くじ引き</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.no.id_for_label }}">{{ form.no.label_tag }}</label>
+            {{ form.no }}
+        </div>
+
+        {% if form.no.errors %}
+            {{ form.no.errors }}
+        {% endif %}
+
+        <button type="submit">席はどこ？</button>
+    </form>
+</main>
+</body>
+</html>
